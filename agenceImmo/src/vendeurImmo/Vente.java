@@ -15,18 +15,14 @@ public class Vente {
 		this.date = date_v;
 	}
 
+	public Date getDate() {
+		return date;
+	}
+
 	protected  Double getMontant() {
 		return montant;
 	}
 	
-	public void setMontant(Double montant) {
-		this.montant = montant;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
 	protected Bien getBien() {
 		return bien;
 	}
