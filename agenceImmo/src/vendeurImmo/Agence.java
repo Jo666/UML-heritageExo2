@@ -17,17 +17,26 @@ public class Agence {
 		this.ventes = new ArrayList<Vente>();
 	}
 	
-	public ArrayList<Bien> getBiens() {return biens;}
 	
-	public void MettreEnVente (Bien b) {this.biens.add(b);}
+	public void mettreEnVente (Bien b) {this.biens.add(b);}
 	
-	public void Vendre(Vente v) {this.ventes.add(v);}
-	
-	
+	public void vendre(Bien b, Double prix) {
+		this.ventes.add(new Vente(b,prix,new Date()));
+	}
 	
 	public Double getCA () {
 		Double sum = 0.;
 		for (Vente v : ventes) sum += v.getMontant() * v.getBien().getFrais();
+		return sum;
+	}
+	
+	public Double getCA (Bien b) {
+		Double sum = 0.;
+		for (Vente v : ventes) {
+			if (v.getBien().equals(b))
+			sum = v.getMontant() * v.getBien().getFrais();
+		}
+			
 		return sum;
 	}
 	
