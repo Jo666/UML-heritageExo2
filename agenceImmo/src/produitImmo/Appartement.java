@@ -12,7 +12,7 @@ public class Appartement extends Bien {
 	
 	@Override
 	public Double getFrais() {
-		return 0.3;
+		return 0.03;
 	}
 
 }
